@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //transform.position = Vector3.Lerp(transform.position, targetPosition, 80 * Time.deltaTime);
-        if (transform.position == targetPosition)
+        if ((transform.position - targetPosition).magnitude > Mathf.Epsilon)
         {
             Vector3 diff = targetPosition - transform.position;
             Vector3 moveDir = diff.normalized * 25 * Time.deltaTime;
